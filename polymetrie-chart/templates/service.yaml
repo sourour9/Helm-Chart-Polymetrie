@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "polymetrie-chart.fullname" . }}
+  namespace : "default"
+  annotations:
+    prometheus.io/port: "http"
+    prometheus.io/scrape: "true"
+  labels:
+    {{- include "polymetrie-chart.labels" . | nindent 4 }}
+    app: "polymetrie"
+    app.kubernetes.io/part-of: dms
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: {{ .Values.service.port }}
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "polymetrie-chart.selectorLabels" . | nindent 4 }}
