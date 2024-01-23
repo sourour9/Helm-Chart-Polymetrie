@@ -93,4 +93,4 @@ affinity:
         - key: number
           operator: In
           values:
-          - 2
+          - "two"
