@@ -1,2 +1,2 @@
 # Helm-Chart-Polymetrie
-k8
+This repository specifically contains the Helm Chart for deploying the Polymetry application. 
