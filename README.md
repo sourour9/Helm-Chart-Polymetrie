@@ -1,2 +1,2 @@
 # Helm-Chart-Polymetrie
-k8s
+k8
